@@ -1,0 +1,6 @@
+{
+  "name": "Campoalto | Inteligência Agrícola",
+  "description": "Plataforma de inteligência agronômica de precisão com topografia 3D de talhões, monitoramento fitossanitário e gestão de safra para a Fazenda Santa Helena.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
