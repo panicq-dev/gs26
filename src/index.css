@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --page-paper: #09090b;
+  --sidebar-paper: #f7f6f0;
+  --field-olive: #70865e;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--page-paper);
+  color: #29372b;
+  overflow-x: hidden;
+}
+
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #718957;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #dce5ce;
+  color: #253427;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #efefe8;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4c9ba;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #909b83;
+}
+
+.drone-tutorial-grid {
+  background-image: linear-gradient(#8192760d 1px, transparent 1px), linear-gradient(90deg, #8192760d 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.drone-tutorial-path {
+  animation: drone-tutorial-path 12s linear infinite;
+}
+
+.drone-tutorial-flight {
+  offset-path: path('M 104 42 L 550 42 L 550 154 L 100 154 L 100 42');
+  offset-distance: 0%;
+  animation: drone-flight 12s linear infinite;
+}
+
+@keyframes drone-flight {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes drone-tutorial-path {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
